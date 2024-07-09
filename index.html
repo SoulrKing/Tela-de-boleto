@@ -29,7 +29,8 @@
             header {
                 height: 50px;
             }
-            footer{
+
+            footer {
                 width: 95%;
             }
         }
@@ -45,10 +46,11 @@
         }
 
         header {
-            width: auto;
+            width: 98%;
             height: 200px;
             margin: 10px;
             padding: 10px;
+            box-sizing: border-box;
             background-image: url(Imagens/plano-de-fundo.png);
             background-position: center;
             background-repeat: no-repeat;
@@ -63,10 +65,28 @@
             margin-left: auto;
             padding-top: 20px;
             padding-right: 50px;
-            font-size: small;
+            box-sizing: border-box;
+            word-wrap: break-word;
+            font-size: 76px;
             text-transform: uppercase;
             display: block;
             text-align: right;
+        }
+
+        header>h2 {
+            margin-left: auto;
+            padding-top: 10px;
+            padding-right: 50px;
+            box-sizing: border-box;
+            word-wrap: break-word;
+            font-size: medium;
+            text-transform: uppercase;
+            display: block;
+            text-align: center;
+        }
+        header>div#empinfo{
+            display: block;
+            margin-left: auto;
         }
 
         header>div>img {
@@ -109,8 +129,8 @@
             border-radius: 10px;
             text-align: center;
         }
-        
-        #tot{
+
+        #tot {
             margin: auto;
             background-color: rgba(128, 128, 128, 0.432);
             width: 70%;
@@ -251,12 +271,28 @@
             header {
                 height: auto;
                 text-align: center;
+                display: block;
+                margin: auto;
             }
 
             header>h1 {
-                margin: 0;
+
+                margin: 0px;
                 padding: 10px;
-                font-size: smaller;
+                font-size: xx-large;
+                display: block;
+                text-align: center;
+                box-sizing: border-box;
+            word-wrap: break-word;
+            }
+
+            header>h2 {
+                margin: 0;
+                padding: 5px;
+                font-size: small;
+                display: block;
+                box-sizing: border-box;
+            word-wrap: break-word;
             }
 
             header>div>img {
@@ -311,10 +347,11 @@
 <body>
     <header>
         <div class="imagem" id="logo"><img src="Imagens/bep-ernegia.png" alt=""></div>
-        <h1>"Nome da empresa" <br>
-            Endereço:*******************-** <br> <!--Digite as informações da empresa.-->
+        <div id="empinfo"><h1>"Nome da empresa" <br> </h1>
+        <h2>Endereço:*******************-** <br> <!--Digite as informações da empresa.-->
             CEP:00000-000, CNPJ:00.000.000/0000-00
-        </h1>
+        </h2>
+    </div>
     </header>
     <main>
         <article id="b01">
@@ -329,7 +366,8 @@
                 <div class="b-left">
                     <p>Total a pagar</p>
                     <div id="total-pagamento">
-                        <!--Programador que irá fazer a função "total-pagamento" use está div, se for edital lembre-se de edita-lá no css.--> <div id="tot">23.334,00</div>
+                        <!--Programador que irá fazer a função "total-pagamento" use está div, se for edital lembre-se de edita-lá no css.-->
+                        <div id="tot">23.334,00</div>
                     </div>
                 </div>
             </div>
