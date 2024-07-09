@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de boleto</title>
+    <style>
+        @charset "UTF-8";
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            /*<<<Edite e coloque a fonte que desejar aqui!*/
+        }
+
+        body {
+            background-color: rgb(190, 128, 11);
+            /*trocar isso dps...*/
+        }
+        header{width: auto;
+            height: 200px;
+            margin: 10px;
+            padding:10px;
+            border-radius: 15px;
+            background-image: url(Imagens/hidroeletrica.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+            text-shadow: 0.5px 0.5px 0px black;
+        }
+        header>h1 {
+            font-size: small;
+            text-transform: uppercase;
+            margin: auto;
+            padding: auto;
+            padding-top: 20px;
+            padding-right: 50px;
+            text-align: right;
+        }
+
+        main { 
+            margin: auto;
+            max-width: 700px;
+            color: rgb(1, 1, 148);
+
+        }
+
+
+        #b01 {
+            margin-top: -22px;
+            margin-left: 20px;
+            margin-right: 20px;
+            padding: 10px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        #b02 {
+            margin: 20px;
+            padding: 10px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+        }
+
+        #b03 {
+            margin: 20px;
+            padding: 10px;
+            padding-bottom: 20px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+
+        }
+
+        #b04 {
+            margin: 20px;
+            padding: 10px;
+            font-size: auto;
+            background-color: rgb(255, 255, 255);
+            border-radius: 10px;
+        }
+        #b04>div{
+            margin: auto;
+            padding: auto;
+            align-items: center;
+            justify-content: center;
+            display:flex;
+        }
+        #b04>div>p{
+            margin: 0px 10px 0px 10px;
+        }
+        img.icone{
+            width: 25px;
+        }
+
+
+        #bloco-vazio {
+            margin: 20px;
+            padding: 5px;
+            height: 60px;
+            padding-bottom: 20px;
+            background-color: rgb(236, 173, 55);
+            border-radius: 10px;
+        }
+
+        footer {
+            margin: 20px;
+            padding: auto;
+            height: 60px;
+            padding-bottom: 60px;
+            /*Ajustar assim que o programa/função de codigo de barras estiver pronto*/
+            background-color: rgb(255, 255, 255);
+            border-radius: 10px;
+        }
+
+        footer>div {
+            margin-bottom: 10px;
+        }
+
+        footer>div>input {
+            margin: auto;
+            margin-top: 20px;
+
+        }
+
+        #azul {
+            padding: 10px;
+            background-color: blue;
+            color: white;
+            border-radius: 5.5px;
+
+        }
+
+        h2 {
+            margin-top: 2.5%;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .container p,
+        .container div {
+            margin: 5px;
+        }
+
+        .container p {
+            flex: 1;
+        }
+
+        .container div {
+            flex: 1;
+        }
+
+        .b-left {
+            border-left: 1px solid #ff660094;
+        }
+
+
+        table {
+            border-collapse: collapse;
+            width: auto;
+            height: auto;
+            text-align: center;
+        }
+
+        .left- {
+            border-left: none;
+        }
+        
+        th {
+            border-left: 1px solid #ff660094;
+            padding: 6px;
+            border-bottom: 1px solid #ff660094;;
+        }
+
+        td {
+            padding-bottom: 10px;
+            border-left: 1px solid #ff660094;;
+        }
+
+        #linha-foot {
+            margin: 10px;
+            width: 90%;
+            opacity: 10%;
+            border-bottom: 1px solid #ff660094;;
+            border-style: dashed;
+        }
+
+        tr#col-cinza{
+            background-color: rgba(25, 0, 255, 0.164);
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100" rel="stylesheet" />
+</head>
+
+<body>
+    <header>
+        <section class="imagem" id="fundo"></section>
+        <section class="imagem" id="logo"></section>
+        <h1>"Nome da empresa" <br>
+            Endereço:*******************-** <br> <!--Digite as informações da empresa.-->
+            CEP:00000-000, CNPJ:00.000.000/0000-00
+        </h1>
+    </header>
+    <main>
+        <article id="b01">
+            <div class="container">
+                <h2>
+                    "Nome da empresa LTDA"
+                </h2>
+                <p class="right">CNPJ:00.000.000/0000-00 <br>
+                    Rua:****, Bairro:****, Cidade:****, CEP:****.
+                </p>
+
+                <div class="b-left">
+                    <p>Total a pagar</p>
+                    <div id="total-pagamento">
+
+                    </div>
+                </div>
+            </div>
+        </article>
+        <article id="b02">
+            <div>
+                <table>
+                    <tr>
+                        <th class="left-">
+                            No da Fatura
+                        </th>
+                        <th>
+                            Mês de referencia
+                        </th>
+                        <th>
+                            Data de Emissão
+                        </th>
+                        <th>Data de Vencimento</td>
+                    </tr>
+                    <tr>
+                        <td class="left-">
+                            AAAAMMCCCC-0
+                        </td>
+                        <td>
+                            MM/AAAA
+                        </td>
+                        <td>
+                            DD/MM/AAAA
+                        </td>
+                        <td>
+                            DD/MM/AAAA
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </article>
+
+        <article id="b03">
+            <table>
+                <tr>
+                    <th class="left-">
+                        Itens da fatura
+                    </th>
+                    <th>
+                        NO Documento FIscal
+                    </th>
+                    <th>
+                        Quantidade
+                    </th>
+                    <th>
+                        Unid
+                    </th>
+                    <th>
+                        Valor Unitario
+                    </th>
+                    <th>
+                        Valor Total
+                    </th>
+                </tr>
+                <tr>
+                    <td class="left-">
+                        Energia Eletrica
+                    </td>
+                    <td>
+                        NF-e 00000 NFS 000
+                    </td>
+                    <td>
+                        00.000,00
+                    </td>
+                    <td>
+                        mhw
+                    </td>
+                    <td>
+                        000,00
+                    </td>
+                    <td>
+                        0.000,00
+                    </td>
+                </tr>
+                <tr id="col-cinza">
+                    <td class="left-">
+                        Serviço de Gestão
+                    </td>
+                    <td>
+
+                    </td>
+                    <td>
+
+                    </td>
+                    <td>
+
+                    </td>
+                    <td>
+
+                    </td>
+                    <td>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left-">
+                        Encargos CCEE
+                    </td>
+                    <td>
+
+                    </td>
+                    <td>
+
+                    </td>
+                    <td>
+
+                    </td>
+                    <td>
+
+                    </td>
+                    <td>
+
+                    </td>
+                </tr>
+            </table>
+        </article>
+        <article id="b04"> <!--Preencha aqui com as informações por favor-->
+            <div id="icones">
+                <img src="Imagens/whatsapp.png" alt="whatsapp" class="icone"><p>+55 22 0000-0000</p>
+                <img src="Imagens/e-mail.png" alt="e-mail" class="icone"><p> Email@email.com.br</p>
+                <img src="Imagens/website.png" alt="website" class="icone"><p>www.website.com.br</p>
+            </div>
+        </article>
+        <article id="bloco-vazio">
+
+        </article>
+        <div id="linha-foot">
+
+        </div>
+    </main>
+    <footer>
+        <div id="azul">
+            <tr>
+                <th>
+                    Razão Social
+                </th>
+                <th>
+                    Mês de Referência
+                </th>
+                <th>
+                    Data de
+                </th>
+                <th>
+                    Valor Total
+                </th>
+            </tr>
+        </div>
+
+        <tr>
+            <td>
+                Empresa consumidora LTDA
+            </td>
+
+            <td>
+                MM/AAAA
+            </td>
+            <td>
+                DD/MM/AAAA
+            </td>
+            <td>
+                00.000,00
+            </td>
+        </tr>
+        <div>
+            <input type="#" id="cod-barras" name="cod-barras">
+            <!-- Input para o programador que irá fazer o programa responsavel por criar codigos de barra.-->
+        </div>
+    </footer>
+</body>
+
+</html>
