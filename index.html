@@ -7,25 +7,27 @@
     <title>Tela de boleto</title>
     <style>
         @charset "UTF-8";
-        @media print {
+        @media print { /*Para impressão.*/
 
-            *{
+            * {
                 margin: 0px;
                 padding: 0px;
             }
-            body{
+
+            body {
                 margin: auto;
                 padding: auto;
                 background-color: rgb(190, 128, 11);
             }
 
-            article#bloco-vazio{
+            article#bloco-vazio {
                 visibility: none;
             }
+
             header {
                 height: 50px;
             }
-             
+
         }
 
         * {
@@ -37,7 +39,6 @@
 
         body {
             background-color: rgb(190, 128, 11);
-            /*trocar isso dps...*/
         }
 
         header {
@@ -45,11 +46,11 @@
             height: 200px;
             margin: 10px;
             padding: 10px;
-            border-radius: 15px;
             background-image: url(Imagens/plano-de-fundo.png);
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
+            border-radius: 15px;
             color: white;
             text-shadow: 0.5px 0.5px 0px black;
             display: flex;
@@ -57,16 +58,37 @@
 
         header>h1 {
             margin-left: auto;
+            padding-top: 20px;
+            padding-right: 50px;
             font-size: small;
             text-transform: uppercase;
             display: block;
-            padding-top: 20px;
-            padding-right: 50px;
             text-align: right;
         }
 
         header>div>img {
             width: 170px;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .container p,
+        .container div {
+            margin: 5px;
+        }
+
+        .container p {
+            flex: 1;
+        }
+
+        .container div {
+            flex: 1;
+        }
+
+        .b-left {
+            border-left: 1px solid #ff660094;
         }
 
         main {
@@ -178,36 +200,21 @@
 
 
         }
-
+        tr#azul>th#rd-left{
+            border-top-left-radius: 5.5px;
+            border-bottom-left-radius: 5.5px;
+        }
+        tr#azul>th#rd-right{
+            border-top-right-radius: 5.5px;
+            border-bottom-right-radius: 5.5px;
+        }
         h2 {
             margin-top: 2.5%;
         }
 
-        .container {
-            display: flex;
-        }
-
-        .container p,
-        .container div {
-            margin: 5px;
-        }
-
-        .container p {
-            flex: 1;
-        }
-
-        .container div {
-            flex: 1;
-        }
-
-        .b-left {
-            border-left: 1px solid #ff660094;
-        }
-
-
         table {
             border-collapse: collapse;
-            width: auto;
+            width: 100%;
             height: auto;
             text-align: center;
 
@@ -231,7 +238,7 @@
 
         #linha-foot {
             margin: 10px;
-            width: 90%;
+            width: 96.5%;
             opacity: 10%;
             border-bottom: 1px solid #ff660094;
             border-style: dashed;
@@ -244,7 +251,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100" rel="stylesheet" />
 </head>
 
-<body>
+<body> <!--Os locais estão mostrados, para edição de texto e colocar funções e configurações, mas é claro, pode editar como quiser.-->
     <header>
         <div class="imagem" id="logo"><img src="Imagens/bep-ernegia.png" alt=""></div>
         <h1>"Nome da empresa" <br>
@@ -256,15 +263,15 @@
         <article id="b01">
             <div class="container">
                 <h2>
-                    "Nome da empresa LTDA"
+                    "Nome da empresa LTDA" <!--Digite as informações da empresa.-->
                 </h2>
-                <p class="right">CNPJ:00.000.000/0000-00 <br>
+                <p class="right">CNPJ:00.000.000/0000-00 <br> <!--Digite as informações da empresa.-->
                     Rua:****, Bairro:****, Cidade:****, CEP:****.
                 </p>
 
                 <div class="b-left">
                     <p>Total a pagar</p>
-                    <div id="total-pagamento">
+                    <div id="total-pagamento"> <!--Programador que irá fazer a função "total-pagamento" use está div, se for edital lembre-se de edita-lá no css.-->
 
                     </div>
                 </div>
@@ -272,7 +279,7 @@
         </article>
         <article id="b02">
             <div>
-                <table>
+                <table> <!-- Adicione as funções ao table, e suas tags.-->
                     <tr>
                         <th class="left-">
                             No da Fatura
@@ -304,7 +311,7 @@
         </article>
 
         <article id="b03">
-            <table>
+            <table> <!-- Adicione as funções ao table, e suas tags.-->
                 <tr>
                     <th class="left-">
                         Itens da fatura
@@ -387,7 +394,7 @@
                 </tr>
             </table>
         </article>
-        <article id="b04"> <!--Preencha aqui com as informações por favor-->
+        <article id="b04"> <!--Preencha aqui com as informações por favor!-->
             <div id="icones">
                 <img src="Imagens/whatsapp.png" alt="whatsapp" class="icone">
                 <p>+55 22 0000-0000</p>
@@ -407,7 +414,7 @@
     <footer>
         <table>
             <tr id="azul">
-                <th>
+                <th id="rd-left">
                     Razão Social
                 </th>
                 <th>
@@ -416,7 +423,7 @@
                 <th>
                     Data de
                 </th>
-                <th>
+                <th id="rd-right">
                     Valor Total
                 </th>
             </tr>
@@ -438,8 +445,8 @@
             </tr>
         </table>
         <div>
-            <input type="#" id="cod-barras" name="cod-barras">
-            <!-- Input para o programador que irá fazer o programa responsavel por criar codigos de barra.-->
+            <input type="#" id="cod-barras" name="cod-barras"> <!-- Input para o programador que irá fazer o programa responsavel por criar codigos de barra.-->
+            
         </div>
     </footer>
 </body>
