@@ -7,6 +7,21 @@
     <title>Tela de boleto</title>
     <style>
         @charset "UTF-8";
+        @media print {
+
+            body{
+                background-color: rgb(190, 128, 11);
+            }
+            article {
+                width: 80%;
+            }
+
+            header {
+                height: 50px;
+            }
+             
+        }
+
         * {
             margin: 0px;
             padding: 0px;
@@ -18,29 +33,37 @@
             background-color: rgb(190, 128, 11);
             /*trocar isso dps...*/
         }
-        header{width: auto;
+
+        header {
+            width: auto;
             height: 200px;
             margin: 10px;
-            padding:10px;
+            padding: 10px;
             border-radius: 15px;
-            background-image: url(Imagens/hidroeletrica.jpg);
-            background-position: center center;
+            background-image: url(Imagens/plano-de-fundo.png);
+            background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
             color: white;
             text-shadow: 0.5px 0.5px 0px black;
+            display: flex;
         }
+
         header>h1 {
+            margin-left: auto;
             font-size: small;
             text-transform: uppercase;
-            margin: auto;
-            padding: auto;
+            display: block;
             padding-top: 20px;
             padding-right: 50px;
             text-align: right;
         }
 
-        main { 
+        header>div>img {
+            width: 170px;
+        }
+
+        main {
             margin: auto;
             max-width: 700px;
             color: rgb(1, 1, 148);
@@ -85,17 +108,20 @@
             background-color: rgb(255, 255, 255);
             border-radius: 10px;
         }
-        #b04>div{
+
+        #b04>div {
             margin: auto;
             padding: auto;
             align-items: center;
             justify-content: center;
-            display:flex;
+            display: flex;
         }
-        #b04>div>p{
+
+        #b04>div>p {
             margin: 0px 10px 0px 10px;
         }
-        img.icone{
+
+        img.icone {
             width: 25px;
         }
 
@@ -110,30 +136,40 @@
         }
 
         footer {
-            margin: 20px;
+            margin: auto;
             padding: auto;
             height: 60px;
+            max-width: 750px;
             padding-bottom: 60px;
             /*Ajustar assim que o programa/função de codigo de barras estiver pronto*/
             background-color: rgb(255, 255, 255);
             border-radius: 10px;
+
+
         }
 
-        footer>div {
-            margin-bottom: 10px;
+        footer>table {
+            text-align: center;
+            align-items: center;
+            margin: auto;
+            padding: auto;
         }
 
         footer>div>input {
             margin: auto;
             margin-top: 20px;
+            display: block;
+
 
         }
 
         #azul {
+            margin: auto;
             padding: 10px;
             background-color: blue;
             color: white;
             border-radius: 5.5px;
+
 
         }
 
@@ -168,32 +204,34 @@
             width: auto;
             height: auto;
             text-align: center;
+
         }
 
         .left- {
             border-left: none;
         }
-        
+
         th {
             border-left: 1px solid #ff660094;
             padding: 6px;
-            border-bottom: 1px solid #ff660094;;
+            border-bottom: 1px solid #ff660094;
         }
 
         td {
             padding-bottom: 10px;
-            border-left: 1px solid #ff660094;;
+            border-left: 1px solid #ff660094;
+
         }
 
         #linha-foot {
             margin: 10px;
             width: 90%;
             opacity: 10%;
-            border-bottom: 1px solid #ff660094;;
+            border-bottom: 1px solid #ff660094;
             border-style: dashed;
         }
 
-        tr#col-cinza{
+        tr#col-cinza {
             background-color: rgba(25, 0, 255, 0.164);
         }
     </style>
@@ -202,8 +240,7 @@
 
 <body>
     <header>
-        <section class="imagem" id="fundo"></section>
-        <section class="imagem" id="logo"></section>
+        <div class="imagem" id="logo"><img src="Imagens/bep-ernegia.png" alt=""></div>
         <h1>"Nome da empresa" <br>
             Endereço:*******************-** <br> <!--Digite as informações da empresa.-->
             CEP:00000-000, CNPJ:00.000.000/0000-00
@@ -346,9 +383,12 @@
         </article>
         <article id="b04"> <!--Preencha aqui com as informações por favor-->
             <div id="icones">
-                <img src="Imagens/whatsapp.png" alt="whatsapp" class="icone"><p>+55 22 0000-0000</p>
-                <img src="Imagens/e-mail.png" alt="e-mail" class="icone"><p> Email@email.com.br</p>
-                <img src="Imagens/website.png" alt="website" class="icone"><p>www.website.com.br</p>
+                <img src="Imagens/whatsapp.png" alt="whatsapp" class="icone">
+                <p>+55 22 0000-0000</p>
+                <img src="Imagens/e-mail.png" alt="e-mail" class="icone">
+                <p> Email@email.com.br</p>
+                <img src="Imagens/website.png" alt="website" class="icone">
+                <p>www.website.com.br</p>
             </div>
         </article>
         <article id="bloco-vazio">
@@ -359,8 +399,8 @@
         </div>
     </main>
     <footer>
-        <div id="azul">
-            <tr>
+        <table>
+            <tr id="azul">
                 <th>
                     Razão Social
                 </th>
@@ -374,23 +414,23 @@
                     Valor Total
                 </th>
             </tr>
-        </div>
 
-        <tr>
-            <td>
-                Empresa consumidora LTDA
-            </td>
+            <tr>
+                <td>
+                    Empresa consumidora LTDA
+                </td>
 
-            <td>
-                MM/AAAA
-            </td>
-            <td>
-                DD/MM/AAAA
-            </td>
-            <td>
-                00.000,00
-            </td>
-        </tr>
+                <td>
+                    MM/AAAA
+                </td>
+                <td>
+                    DD/MM/AAAA
+                </td>
+                <td>
+                    00.000,00
+                </td>
+            </tr>
+        </table>
         <div>
             <input type="#" id="cod-barras" name="cod-barras">
             <!-- Input para o programador que irá fazer o programa responsavel por criar codigos de barra.-->
