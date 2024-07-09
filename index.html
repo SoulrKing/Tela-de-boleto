@@ -7,9 +7,10 @@
     <title>Tela de boleto</title>
     <style>
         @charset "UTF-8";
-        
-        @media print { /*Para impressão.*/
 
+        @media print {
+
+            /*Para impressão.*/
             * {
                 margin: 0px;
                 padding: 0px;
@@ -28,14 +29,12 @@
             header {
                 height: 50px;
             }
-
         }
 
         * {
             margin: 0px;
             padding: 0px;
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            /*<<<Edite e coloque a fonte que desejar aqui!*/
         }
 
         body {
@@ -96,9 +95,7 @@
             margin: auto;
             max-width: 700px;
             color: rgb(1, 1, 148);
-
         }
-
 
         article#b01 {
             margin-top: -22px;
@@ -127,7 +124,6 @@
             border-radius: 10px;
             display: flex;
             justify-content: center;
-
         }
 
         article#b04 {
@@ -154,7 +150,6 @@
             width: 25px;
         }
 
-
         article#bloco-vazio {
             margin: 20px;
             padding: 5px;
@@ -170,11 +165,8 @@
             height: 60px;
             max-width: 750px;
             padding-bottom: 60px;
-            /*Ajustar assim que o programa/função de codigo de barras estiver pronto*/
             background-color: rgb(255, 255, 255);
             border-radius: 10px;
-
-
         }
 
         footer>table {
@@ -188,8 +180,6 @@
             margin: auto;
             margin-top: 20px;
             display: block;
-
-
         }
 
         #azul {
@@ -198,17 +188,18 @@
             background-color: blue;
             color: white;
             border-radius: 5.5px;
-
-
         }
-        tr#azul>th#rd-left{
+
+        tr#azul>th#rd-left {
             border-top-left-radius: 5.5px;
             border-bottom-left-radius: 5.5px;
         }
-        tr#azul>th#rd-right{
+
+        tr#azul>th#rd-right {
             border-top-right-radius: 5.5px;
             border-bottom-right-radius: 5.5px;
         }
+
         h2 {
             margin-top: 2.5%;
         }
@@ -218,7 +209,6 @@
             width: 100%;
             height: auto;
             text-align: center;
-
         }
 
         .left- {
@@ -234,7 +224,6 @@
         td {
             padding-bottom: 10px;
             border-left: 1px solid #ff660094;
-
         }
 
         #linha-foot {
@@ -248,11 +237,69 @@
         tr#col-cinza {
             background-color: rgba(25, 0, 255, 0.164);
         }
+
+        @media screen and (max-width: 600px) {
+            header {
+                height: auto;
+                text-align: center;
+            }
+
+            header>h1 {
+                margin: 0;
+                padding: 10px;
+                font-size: smaller;
+            }
+
+            header>div>img {
+                width: 100px;
+            }
+
+            .container {
+                flex-direction: column;
+            }
+
+            .container p,
+            .container div {
+                flex: none;
+                width: 100%;
+                text-align: center;
+            }
+
+            article#b01,
+            article#b02,
+            article#b03,
+            article#b04,
+            footer {
+                margin: 10px;
+                padding: 10px;
+            }
+
+            article#b04>div {
+                flex-direction: column;
+            }
+
+            table,
+            th,
+            td {
+                font-size: 12px;
+            }
+
+            th,
+            td {
+                padding: 4px;
+            }
+
+            table {
+                display: block;
+                overflow-x: auto;
+                width: 100%;
+            }
+        }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100" rel="stylesheet" />
 </head>
 
-<body> <!--Os locais estão mostrados, para edição de texto e colocar funções e configurações, mas é claro, pode editar como quiser.-->
+<body>
     <header>
         <div class="imagem" id="logo"><img src="Imagens/bep-ernegia.png" alt=""></div>
         <h1>"Nome da empresa" <br>
@@ -272,7 +319,8 @@
 
                 <div class="b-left">
                     <p>Total a pagar</p>
-                    <div id="total-pagamento"> <!--Programador que irá fazer a função "total-pagamento" use está div, se for edital lembre-se de edita-lá no css.-->
+                    <div id="total-pagamento">
+                        <!--Programador que irá fazer a função "total-pagamento" use está div, se for edital lembre-se de edita-lá no css.-->
 
                     </div>
                 </div>
@@ -291,7 +339,7 @@
                         <th>
                             Data de Emissão
                         </th>
-                        <th>Data de Vencimento</td>
+                        <th>Data de Vencimento</th>
                     </tr>
                     <tr>
                         <td class="left-">
@@ -318,7 +366,7 @@
                         Itens da fatura
                     </th>
                     <th>
-                        NO Documento FIscal
+                        NO Documento Fiscal
                     </th>
                     <th>
                         Quantidade
@@ -446,8 +494,8 @@
             </tr>
         </table>
         <div>
-            <input type="#" id="cod-barras" name="cod-barras"> <!-- Input para o programador que irá fazer o programa responsavel por criar codigos de barra.-->
-            
+            <input type="#" id="cod-barras" name="cod-barras">
+            <!-- Input para o programador que irá fazer o programa responsavel por criar codigos de barra.-->
         </div>
     </footer>
 </body>
